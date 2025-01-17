@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Question</title>
+    <link rel="stylesheet" href="QSstyle.css">
+    <link rel="icon" href="image-removebg-preview.png" type="image/x-icon">
+    <script>
+        // Check if the valid key flag is set in local storage
+        if (!localStorage.getItem('validKeyEntered')) {
+            // Redirect to the key entry page if the flag is not set
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="gui-container">
+            <div class="center-box" id="upload-box">
+                <button id="reset-button" class="action-button reset-button">
+                    <img src="refresh-2-16.png" alt="Reset">
+                </button>
+                <label for="file-input" class="custom-file-upload">
+                    Select File
+                </label>
+                <input type="file" id="file-input" multiple>
+            </div>
+            <div class="file-list" id="file-list"></div>
+        </div>
+        <div class="button-container">
+            <button id="next-button" class="custom-file-upload" style="display: none;">Download</button>
+        </div>
+    </div>
+    <div class="footer-text">
+        Hãy chỉ tải từ 7 đến 10 file để tránh trường hợp bị lỗi.
+    </div>
+    <textarea id="paste-area" style="position: absolute; left: -9999px;"></textarea>
+    <script src="QScore.js"></script>
+</body>
+</html>

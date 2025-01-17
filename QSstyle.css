@@ -1,0 +1,197 @@
+body {
+    background-color: #1e1e1e;
+    color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    flex-direction: column;
+    animation: morphIn 1s forwards;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.gui-container {
+    display: flex;
+    gap: 20px;
+}
+
+.center-box {
+    width: 300px;
+    height: 250px;
+    padding: 30px;
+    background-color: #2c2c2c;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add this to position the reset button */
+    transition: transform 1s;
+}
+
+.center-box.dragover {
+    border: 2px dashed #888;
+    background-color: #333;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    padding: 20px 40px;
+    border: 2px solid #2c2c2c;
+    border-radius: 20px;
+    background-color: #1e1e1e;
+    color: #888;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.custom-file-upload:hover {
+    background-color: #555;
+    border-color: #666;
+}
+
+.custom-file-upload.invalid {
+    border-color: red;
+    transition: border-color 0.3s;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.reset-button {
+    position: absolute;
+    top: 10px; /* Adjust this value to set the top margin */
+    left: 10px; /* Adjust this value to set the left margin */
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.file-list {
+    width: 300px;
+    height: 250px;
+    background-color: #2c2c2c;
+    border: 15px solid #2c2c2c;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-weight: bold;
+}
+
+.file-list::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.file-list::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 10px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.file-list .file-item {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #3c3c3c;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.file-list .file-item:hover {
+    background-color: #4a4a4a;
+    transform: scale(1.02);
+}
+
+.file-list .file-item .file-name {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.file-list .delete-button {
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s;
+}
+
+.file-list .delete-button:hover {
+    color: #ff4d4d;
+}
+
+.footer-text {
+    margin-top: auto;
+    padding: 10px 20px;
+    color: #888;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+
+@keyframes morphIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e1e1e;
+    color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.center-box {
+    width: 400px;
+    padding: 30px;
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: morph 1s forwards;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes morph {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes morph-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes morph-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.morph-out {
+    animation: morph-out 1s forwards;
+}
+
+.morph-in {
+    animation: morph-in 1s forwards;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #888; /* Grey color */
+    margin-bottom: 0; /* Remove bottom margin */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+.version {
+    font-size: 14px; /* Smaller font size */
+    font-weight: normal;
+    color: #888; /* Grey color */
+}
+
+.subtitle {
+    font-size: 14px; /* Smaller font size */
+    font-weight: normal;
+    color: #888; /* Grey color */
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+.input-container {
+    position: relative;
+    width: 100%; /* Ensure full width */
+    max-width: 360px; /* Set a max width */
+    margin: 0 auto; /* Center the container */
+}
+
+input {
+    margin-top: 5px;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 20px; /* Increase border radius */
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    background-color: #3a3a3a;
+    color: #f0f2f5;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+input::placeholder {
+    color: #888; /* Grey color */
+    font-style: italic; /* Italic style */
+    font-size: 14px; /* Smaller font size */
+}
+
+input:focus {
+    border-color: #555; /* Remove blue border */
+    box-shadow: none; /* Remove box shadow */
+    outline: none;
+}
+
+input.error {
+    border-color: red; /* Red border for error */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 70px; /* Add space between buttons */
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #555; /* Border color to match the input box */
+    border-radius: 20px; /* Match the input box border radius */
+    background-color: #444; /* Subtle background color */
+    color: #f0f2f5;
+    font-size: 14px; /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+    border-color: #666; /* Change border color on hover */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
